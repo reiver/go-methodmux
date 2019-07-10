@@ -22,11 +22,11 @@ import "github.com/reiver/go-methodmux"
 
 var mux methodmux.Mux
 
-err := mux.HandleGET(getHandler)
-err := mux.HandlePATCH(patchHandler)
-err := mux.HandlePUT(putHandler)
+err := mux.HandleMethodGet(getHandler)
+err := mux.HandleMethodPatch(patchHandler)
+err := mux.HandleMethodPut(putHandler)
 
-err := mux.Handle(screamHandler, "SCREAM")
+err := mux.HandleMethod(screamHandler, "SCREAM")
 
 // ...
 
